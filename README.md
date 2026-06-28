@@ -55,14 +55,15 @@
 
 | make [링크](https://us2.make.com/public/shared-scenario/vLwSi21F4TV/integration-git-hub-google-sheets) |
 | ---------------------------------------------------------------------------------------------------- |
-|                                                                                                      |
+| <img src="./images/project_1_make_workflow_1.png" width="100%"/> |                                                                                               
 
 
 
 
 
 
-relay.app [링크](https://run.relay.app/shared/b1-3-project1-t2I2815LMzIk)
-
+| relay.app [링크](https://run.relay.app/shared/b1-3-project1-t2I2815LMzIk) |
+| ---------------------------------------------------------------------------------------------------- |
+| <img src="./images/project_1_relay_app_01.png" width="47%"/> <img src="./images/project_1_relay_app_02.png" width="47%"/> |              
 
 
