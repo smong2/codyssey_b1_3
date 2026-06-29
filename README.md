@@ -11,7 +11,7 @@
 
 ### 2. 구현 과정 요약
 
-- **공통 워크플로우:** GitHub에 이슈(Issue)가 생성되면 상세 정보를 가져온 후, '버그' 관련 이슈는 [긴급_버그 트래커] 시트에, 그 외 이슈는 [전체_이슈 백업] 시트에 자동으로 분류/적재하는 파이프라인을 구축함.
+- **공통 워크플로우:** GitHub에 이슈(Issue)가 생성되면 상세 정보를 가져온 후, '버그' 관련 이슈는 [버그등록] 시트에, 그 외 이슈는 [이슈생성] 시트에 자동으로 분류/적재하는 파이프라인을 구축함.
 - **Make 구현:** `Watch Issues` 트리거와 `Get an Issue` 모듈을 연동하여 배열 데이터를 확보하고, `Router`를 통해 키워드 필터링(버그) 및 `Fallback` 경로(일반 이슈)를 설계함.
 - **[Relay.app](http://Relay.app) 구현:** `New Issue` 트리거를 활용하여 선형적인 `Path(If/Else)`를 생성하고, 조건문을 통해 각 시트로 데이터를 배분하는 직관적 워크플로우를 구현함.
 
@@ -51,13 +51,13 @@
 
 | make [링크](https://us2.make.com/public/shared-scenario/vLwSi21F4TV/integration-git-hub-google-sheets) |
 | ---------------------------------------------------------------------------------------------------- |
-| <img src="./images/project_1_make_workflow_1.png" width="100%" />   |
+| <img src="./images/project1/make_workflow_1.png" width="100%" />   |
 
 
 
 | relay.app [링크](https://run.relay.app/shared/b1-3-project1-t2I2815LMzIk) |
 | ----------------------------------------------------------------------- |
-| <img src="./images/project_1_relay_app_01.png" width="47%"/>  <img src="./images/project_1_relay_app_02.png" width="47%"/>         |
+| <img src="./images/project1/relay_app_01.png" width="47%"/>  <img src="./images/project1/relay_app_02.png" width="47%"/>         |
 
 
 ---
@@ -91,8 +91,9 @@
 ## 4. 구현 상세 (프로젝트 요구사항 충족)
 
 - **보너스 1 (AI 연동):** OpenAI Action을 통해 단순 수치를 "불쾌지수 : {{불쾌지수 산출}} 현재 기온 {{TA}}도로 매우 위험한 수준입니다. 야외 활동을 즉시 중단하세요."와 같은 실질적인 정보성 메시지로 자동 변환함.
+<img src="./images/project2/bonus1_N_high_tem_hm.png" width="100%"/>
 - **보너스 2 (실패 전략):** Gmail 발송 실패 시, 에러가 발생한 이슈 정보를 별도의 시트([에러 적재 기록])로 즉시 자동 적재하는 대체 경로 설계(Fail-safe).
-fin
+<img src="./images/project2/bonus2_write_error_data.png" width="100%"/>
 
 ## 5. 보고서용 워크플로우 구현 상세 및 결과 요약
 
@@ -100,9 +101,18 @@ fin
 
 - **구현 화면:** 
 * 구현 과정
-<img src="./images/workflow-설계과정.png" width=100%/>
+<img src="./images/project2/workflow-설계과정.png" width=100%/>
 * 최종 플로우
-<img src="./images/project2_workflow.png" width="100%"/>
+<img src="./images/project2/workflow.png" width="100%"/>
 
 
 - **실행 결과:** 
+
+고온, 불쾌지수 기록, 안내문구 출력
+<img src="./images/project2/excution.png" width="100%" />
+
+과습 필터 기록
+<img src="./images/project2/high_hm.png" width="100%" />
+
+* 데이터에러 (-99) 발생기록
+<img src="./images/project2/dataerror.png" width="100%" />
