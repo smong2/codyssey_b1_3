@@ -108,8 +108,12 @@
 
 - **실행 결과:** 
 
-고온, 불쾌지수 기록, 안내문구 출력
+실행기록 
 <img src="./images/project2/excution.png" width="100%" />
+
+고온, 불쾌지수 기록, 안내문구(ai생성) 출력
+온도는 30도지만, 테스트를 위해 기준값을 낮춰서 돌림 (29도)
+<img src="./images/project2/bonus1_N_high_tem_hm.png" width="100%" />
 
 과습 필터 기록
 <img src="./images/project2/high_hm.png" width="100%" />
